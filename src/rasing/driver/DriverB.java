@@ -3,8 +3,8 @@ package rasing.driver;
 import rasing.Car;
 
 public class DriverB extends Driver<Car> {
-    public DriverB(String name, boolean hasDrivingLicense, int experience) {
-        super(name, hasDrivingLicense, experience);
+    public DriverB(String name, boolean hasDrivingLicense, int experience, Category category) {
+        super(name, hasDrivingLicense, experience,category);
     }
 
     @Override

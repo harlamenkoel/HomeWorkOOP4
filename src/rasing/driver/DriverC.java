@@ -1,11 +1,10 @@
 package rasing.driver;
 
-import rasing.Car;
 import rasing.Truck;
 
 public class DriverC extends Driver<Truck> {
-    public DriverC(String name, boolean hasDrivingLicense, int experience) {
-        super(name, hasDrivingLicense, experience);
+    public DriverC(String name, boolean hasDrivingLicense, int experience, Category category) {
+        super(name, hasDrivingLicense, experience,category);
     }
 
     @Override

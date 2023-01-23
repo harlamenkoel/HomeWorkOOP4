@@ -6,11 +6,15 @@ public abstract class Driver<T extends Transport> {
     private final String name;
     private boolean hasDrivingLicense;
     private int experience;
+    private Category category;
 
-    public Driver(String name, boolean hasDrivingLicense, int experience) {
+
+    public Driver(String name, boolean hasDrivingLicense, int experience, Category category) {
         this.name = name;
         this.hasDrivingLicense = hasDrivingLicense;
         this.experience = experience;
+        this.category = category;
+
     }
 
     public String getName() {
@@ -29,9 +33,22 @@ public abstract class Driver<T extends Transport> {
         return experience;
     }
 
-    public void setExperience(int experience) {
-        this.experience = experience;
+    public Category getCategory() {
+        return category;
     }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
+    public void setExperience(int experience) {
+        if (category == null) {
+            throw new IllegalArgumentException("Необходимо указать категортию прав!");
+        } else {
+            this.experience = experience;
+        }
+    }
+
 
     public abstract void startMove(T transport);
 
