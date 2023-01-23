@@ -40,6 +40,11 @@ public class Truck extends Transport implements Competing {
         return Math.random() > 0.5;
     }
 
+    @Override
+    public void repair() {
+        System.out.println("Грузовик " + getBrand() + " " + getModel() + " починен!");
+    }
+
 
     @Override
     public void pitStop() {
