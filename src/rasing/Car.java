@@ -1,12 +1,28 @@
 package rasing;
 
+import rasing.driver.BodyType;
+
 public class Car extends Transport implements Competing {
+
+    private BodyType bodyType;
 
 
     public Car(String brand,
                String model,
-               double engineSize) {
+               double engineSize,
+               BodyType bodyType) {
         super(brand, model, engineSize);
+    }
+
+
+
+
+    public BodyType getBodyType() {
+        return bodyType;
+    }
+
+    public void setBodyType(BodyType bodyType) {
+        this.bodyType = bodyType;
     }
 
     @Override
@@ -27,11 +43,13 @@ public class Car extends Transport implements Competing {
 
     @Override
     public int bestLoopTime() {
-        return (int) ((Math.random()+1) * 10);
+        return (int) ((Math.random() + 1) * 10);
     }
 
     @Override
     public int maxSpeed() {
-        return (int) ((Math.random()+1) * 200);
+        return (int) ((Math.random() + 1) * 200);
     }
+
+    
 }

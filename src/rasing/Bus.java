@@ -1,21 +1,27 @@
 package rasing;
 
+import rasing.driver.Size;
+
 public class Bus extends Transport implements Competing {
+
+    private Size size;
+
     public Bus(String brand,
                String model,
-               double engineSize) {
+               double engineSize, int size) {
         super(brand, model, engineSize);
     }
 
     @Override
     public void start() {
-        System.out.println("Автобус "+getBrand()+" "+getModel()+ " начал движение");
+        System.out.println("Автобус " + getBrand() + " " + getModel() + " начал движение");
     }
 
     @Override
     public void stop() {
-        System.out.println("Автобус "+getBrand()+" "+getModel()+ " закончил движение");
+        System.out.println("Автобус " + getBrand() + " " + getModel() + " закончил движение");
     }
+
     @Override
     public void pitStop() {
         System.out.println(getBrand() + " " + getModel() + " прошел пит-стоп");
@@ -24,11 +30,11 @@ public class Bus extends Transport implements Competing {
 
     @Override
     public int bestLoopTime() {
-        return (int) ((Math.random()+1) * 20);
+        return (int) ((Math.random() + 1) * 20);
     }
 
     @Override
     public int maxSpeed() {
-        return (int) ((Math.random()+1) * 80);
+        return (int) ((Math.random() + 1) * 80);
     }
 }

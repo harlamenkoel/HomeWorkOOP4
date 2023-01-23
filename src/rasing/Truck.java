@@ -1,11 +1,14 @@
 package rasing;
 
+import rasing.driver.LoadCapacity;
+
 public class Truck extends Transport implements Competing {
 
-
-    public Truck(String brand, String model, double engineSize) {
+private LoadCapacity loadCapacity;
+    public Truck(String brand, String model, double engineSize, double loadCapacity) {
         super(brand, model, engineSize);
     }
+
 
     @Override
     public void start() {
