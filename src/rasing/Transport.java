@@ -24,8 +24,10 @@ public abstract class Transport {
     public double getEngineSize() {
         return engineSize;
     }
+
     public abstract void start();
+
     public abstract void stop();
 
-
+    public abstract void printType();
 }

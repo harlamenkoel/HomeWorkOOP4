@@ -12,9 +12,8 @@ public class Car extends Transport implements Competing {
                double engineSize,
                BodyType bodyType) {
         super(brand, model, engineSize);
+        this.bodyType = bodyType;
     }
-
-
 
 
     public BodyType getBodyType() {
@@ -36,6 +35,15 @@ public class Car extends Transport implements Competing {
     }
 
     @Override
+    public void printType() {
+        if (getBodyType() == null) {
+            System.out.println("Данных по авто не достаточно");
+        } else {
+            System.out.println("Тип кузова авто: " + getBodyType());
+        }
+    }
+
+    @Override
     public void pitStop() {
         System.out.println(getBrand() + " " + getModel() + " прошел пит-стоп");
 
@@ -51,5 +59,5 @@ public class Car extends Transport implements Competing {
         return (int) ((Math.random() + 1) * 200);
     }
 
-    
+
 }

@@ -8,8 +8,13 @@ public class Bus extends Transport implements Competing {
 
     public Bus(String brand,
                String model,
-               double engineSize, int size) {
+               double engineSize, Size size) {
         super(brand, model, engineSize);
+        this.size = size;
+    }
+
+    public Size getSize() {
+        return size;
     }
 
     @Override
@@ -21,6 +26,16 @@ public class Bus extends Transport implements Competing {
     public void stop() {
         System.out.println("Автобус " + getBrand() + " " + getModel() + " закончил движение");
     }
+
+    @Override
+    public void printType() {
+        if (size == null) {
+            System.out.println("Данных по авто не достаточно");
+        } else {
+            System.out.println("Пассажировместимость: " + getSize());
+        }
+    }
+
 
     @Override
     public void pitStop() {
